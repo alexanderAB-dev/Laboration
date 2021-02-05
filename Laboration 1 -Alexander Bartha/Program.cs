@@ -10,24 +10,15 @@ namespace Laboration_1__Alexander_Bartha
         static void Main(string[] args)
         {
 
-            Console.Writeline("Please input a string.");
+            Console.WriteLine("Please input a string.");
             Console.Write("Your string: "); string inputString = Console.ReadLine();
-            Console.WriteLine("Possible combinations:\n_________________\n");
+            Console.WriteLine("Possible combinations:\n_________________\n");                        
+            List<string> substringList = new List<string>();
 
-
-            string subStringMatch;
-            string subStringEnd;
-            string subStringStart;
-            List<string> combinationValue = new List<string>();
             for (int i = 0; i < inputString.Length - 1; i++)
             {
-
-
                 if (char.IsDigit(inputString, i))
-                {
-
-                    
-                   
+                {                       
                     for (int j = i + 1; j < inputString.Length; j++)
                     {
                         if (!char.IsDigit(inputString[j])) //avbryta ifall bokstav dyker upp
@@ -37,34 +28,32 @@ namespace Laboration_1__Alexander_Bartha
 
                         else if ( inputString[i] == inputString[j])
                         {
-                            
-
-                            subStringMatch = inputString.Substring(startIndex: i, j - i + 1);
-                            subStringStart = inputString.Substring(startIndex: 0, i);
-                            subStringEnd = inputString.Substring(startIndex: j + 1);
-                            Console.Write(subStringStart);
-                            Console.ForegroundColor = ConsoleColor.Green;
+                            int matchStartIndex = i;
+                            int matchIndexLength = j - i + 1;
+                            int matchEndIndex = j + 1;
+                            string subStringMatch = inputString.Substring(startIndex: matchStartIndex, matchIndexLength);
+                            string subStringBefore = inputString.Substring(startIndex: 0, matchStartIndex);
+                            string subStringAfter = inputString.Substring(startIndex: matchEndIndex);
+                            Console.Write(subStringBefore);
+                            Console.ForegroundColor = ConsoleColor.Red;
                             Console.Write(subStringMatch);
-                            combinationValue.Add(subStringMatch);
+                            substringList.Add(subStringMatch);
                             Console.ResetColor();
-                            Console.Write(subStringEnd);
+                            Console.Write(subStringAfter);
                             Console.Write("\n");
 
-
                             break;
-
                         }
                         
                     }
                       
-                }
-
-               
-
+                }                   
 
             }
 
-            Console.WriteLine("_________________\n\nThe value of the substrings combined is: " + (combinationValue.Sum(x=>Convert.ToInt64(x)))+".");
+            Console.WriteLine("_________________\n\nThe value of the substrings combined is: " +
+            (substringList.Sum(x => Convert.ToInt64(x))) + ".");
+
             Console.ReadKey();
 
         }
