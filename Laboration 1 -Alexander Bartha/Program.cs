@@ -21,12 +21,12 @@ namespace Laboration_1__Alexander_Bartha
                 {                       
                     for (int j = i + 1; j < inputString.Length; j++)
                     {
-                        if (!char.IsDigit(inputString[j])) //avbryta ifall bokstav dyker upp
+                        if (!char.IsDigit(inputString[j])) //Avbryta ifall bokstav dyker upp
                         {
                             break;
                         }
 
-                        else if ( inputString[i] == inputString[j])
+                        else if ( inputString[i] == inputString[j]) //Matcha siffra på index i med index j och dela upp i substrängar
                         {
                             int matchStartIndex = i;
                             int matchIndexLength = j - i + 1;
@@ -52,7 +52,7 @@ namespace Laboration_1__Alexander_Bartha
             }
 
             Console.WriteLine("_________________\n\nThe value of the substrings combined is: " +
-            (substringList.Sum(x => Convert.ToInt64(x))) + ".");
+            (substringList.Sum(x => Convert.ToInt64(x))) + "."); // Skriva ut det kombinerade värdet av alla substrings
 
             Console.ReadKey();
 
