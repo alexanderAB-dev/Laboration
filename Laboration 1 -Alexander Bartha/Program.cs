@@ -26,7 +26,7 @@ namespace Laboration_1__Alexander_Bartha
                             break;
                         }
 
-                        else if ( inputString[i] == inputString[j]) //Matcha siffra på index i med index j och dela upp i substrängar
+                        else if ( inputString[i] == inputString[j]) //Matcha siffra på index i med index j och dela upp i substrängar och skriv ut
                         {
                             int matchStartIndex = i;
                             int matchIndexLength = j - i + 1;
