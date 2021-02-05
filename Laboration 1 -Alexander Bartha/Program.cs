@@ -10,7 +10,7 @@ namespace Laboration_1__Alexander_Bartha
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Please input a string");
+            Console.Writeline("Please input a string.");
             Console.Write("Your string: "); string inputString = Console.ReadLine();
             Console.WriteLine("Possible combinations:\n_________________\n");
 
