@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
+
 namespace Laboration_1__Alexander_Bartha
 {
     class Program
